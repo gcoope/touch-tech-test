@@ -1,0 +1,75 @@
+{
+  "clients": [
+    {
+      "id": "0001",
+      "name": "Mr Daniel Dreiberg",
+      "portfolioValue": 110000,
+      "assets": [
+        {
+          "name": "BlackRock Institutional Cash Series Sterling Liquidity Agency Inc",
+          "ISIN": "IE00B52L4369",
+          "percentage": 20
+        },
+        {
+          "name": "Threadneedle UK Property Authorised Investment Net GBP 1 Acc",
+          "ISIN": "GB00BQ1YHQ70",
+          "percentage": 20
+        },
+        {
+          "name": "Vanguard US Equity Index Institutional Plus GBP Accumulation",
+          "ISIN": "GB00BPN5P238 ",
+          "percentage": 60
+        }
+      ]
+    },
+    {
+      "id": "0002",
+      "name": "Ms Laurel Juspeczyk",
+      "portfolioValue": 245000,
+      "assets": [
+        {
+          "name": "Threadneedle UK Property Authorised Investment Net GBP 1 Acc",
+          "ISIN": "GB00BQ1YHQ70",
+          "percentage": 40
+        },
+        {
+          "name": "Legal & General Japan Index Trust C Class Accumulation",
+          "ISIN": "GB00BG0QP828",
+          "percentage": 60
+        }
+      ]
+    },
+    {
+      "id": "0003",
+      "name": "Dr Jonathan Osterman",
+      "portfolioValue": 65000,
+      "assets": [
+        {
+          "name": "Vanguard FTSE U.K. All Share Index Unit Trust Accumulation",
+          "ISIN": "IE00B1S74Q32",
+          "percentage": 10
+        },
+        {
+          "name": "Vanguard US Equity Index Institutional Plus GBP Accumulation",
+          "ISIN": "GB00BPN5P238",
+          "percentage": 10
+        },
+        {
+          "name": "BlackRock Institutional Cash Series Sterling Liquidity Agency Inc",
+          "ISIN": "IE00B52L4369",
+          "percentage": 30
+        },
+        {
+          "name": "Threadneedle UK Property Authorised Investment Net GBP 1 Acc",
+          "ISIN": "GB00BQ1YHQ70",
+          "percentage": 30
+        },
+        {
+          "name": "Legal & General Japan Index Trust C Class Accumulation",
+          "ISIN": "GB00BG0QP828",
+          "percentage": 20
+        }
+      ]
+    }
+  ]
+}

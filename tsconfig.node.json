@@ -5,6 +5,8 @@
     "composite": true,
     "module": "ESNext",
     "types": ["node"],
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "target": "ES6"
   }
 }
