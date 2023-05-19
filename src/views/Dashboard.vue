@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import { getClients } from "@/api/api";
 import type { Client } from "@/types";
+import { toGBP } from "@/utils/formatUtils";
 
 const clients = ref([] as Client[]);
 await getClients().then((res) => (clients.value = res));
@@ -18,9 +19,13 @@ await getClients().then((res) => (clients.value = res));
       </tr>
       <tr v-for="client in clients">
         <td>
-          <a :href="`/client/${client.id}`">{{ client.name }}</a>
+          <a
+            :href="`/client/${client.id}`"
+            :title="`View ${client.name}'s Portfolio`"
+            >{{ client.name }}</a
+          >
         </td>
-        <td>{{ client.portfolioValue }}</td>
+        <td>{{ toGBP(client.portfolioValue) }}</td>
         <td>{{ client.assets.length }}</td>
       </tr>
     </table>

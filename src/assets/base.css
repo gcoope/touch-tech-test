@@ -1,9 +1,23 @@
 :root {
   --c-white: #ffffff;
   --c-darkgrey: #333333;
+  --c-grey: #999999;
+  --c-offwhite: #eeeeee;
+  --c-brand-primary: #2a9d8f;
+  --c-brand-secondary: #e9c46a;
 
   --c-background: var(--c-white);
   --c-text: var(--c-darkgrey);
+  --c-text-light: var(--c-grey);
+  --c-link: var(--c-brand-primary);
+  --c-border-color: var(--c-grey);
+
+  --spacing-sm: 4px;
+  --spacing-md: 8px;
+  --spacing-lg: 12px;
+  --spacing-xl: 16px;
+
+  --border-radius: 10px;
 }
 /* TODO Dark mode theming
 @media (prefers-color-scheme: dark) {
@@ -25,5 +39,6 @@ body {
   min-height: 100vh;
   color: var(--c-text);
   background: var(--c-background);
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

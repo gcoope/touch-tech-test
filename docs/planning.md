@@ -4,10 +4,11 @@ Steps taken in rough order:
 
 1. Consider data structure and (mock) API endpoints
 2. Plan views and routes
-3. Brief upskill on React vs Vue to understand key differences
-4. Mock data endpoint(s)
-5. Implemented routing between views
-6. Added tables for data in 3 views, using route param to load data
+3. Mock data endpoint(s)
+4. Brief upskill on React vs Vue to understand key differences
+5. Decide to use Single File Components (SFC) due to being most common
+6. Implemented routing between views
+7. Added tables for data in 3 views, using route param to load data
 
 Things to try and cover:
 

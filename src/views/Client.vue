@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useRoute } from "vue-router";
 import { getClient } from "@/api/api";
 import type { Client } from "@/types";
+import { toGBP } from "@/utils/formatUtils";
 
 const route = useRoute();
 const clientId = route.params.id as string;
@@ -16,9 +17,16 @@ await getClient(clientId).then((res) => {
 
 <template>
   <div class="client-view">
-    <h2>Client view</h2>
-    <p>{{ client.name }}</p>
-    <p>{{ client.portfolioValue }}</p>
+    <section class="portfolio-overview">
+      <div class="portfolio-details">
+        <h2>{{ client.name }}'s Portfolio</h2>
+        <p>
+          Value:
+          <span class="highlight">{{ toGBP(client.portfolioValue) }}</span>
+        </p>
+      </div>
+      <div class="porfolio-chart"></div>
+    </section>
     <table>
       <tr>
         <th>Asset Name</th>
@@ -36,4 +44,12 @@ await getClient(clientId).then((res) => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.portfolio-overview {
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+}
+span.highlight {
+  font-weight: 600;
+}
+</style>

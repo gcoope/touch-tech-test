@@ -2,15 +2,9 @@
 
 <template>
   <header>
-    <h1>Demo Advisor Portal</h1>
+    <router-link to="/"><h1>Demo Advisor Portal</h1></router-link>
   </header>
-
   <main>
-    <div id="nav">
-      <router-link to="/">Dashboard</router-link> |
-      <router-link to="/client/0001">Client 1</router-link> |
-      <router-link to="/asset/IE00B52L4369">Asset </router-link>
-    </div>
     <Suspense>
       <router-view />
     </Suspense>
@@ -18,6 +12,9 @@
 </template>
 
 <style scoped>
+header {
+  margin-bottom: 1em;
+}
 h1 {
   text-align: center;
 }
@@ -25,5 +22,48 @@ h1 {
   h1 {
     text-align: left;
   }
+}
+</style>
+
+<style>
+h2 {
+  margin-bottom: var(--spacing-md);
+}
+
+a,
+a:visited {
+  color: var(--c-link);
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: var(--border-radius);
+}
+
+table > tr > th {
+  text-align: left;
+  font-weight: 600;
+}
+
+table th,
+table td {
+  padding: var(--spacing-md);
+  border-left: 1px solid var(--c-border-color);
+}
+
+table td:first-child,
+table th:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+table > tr:first-child {
+  border-bottom: 1px solid var(--c-border-color);
+  margin-bottom: var(--spacing-md);
+}
+
+table > tr:not(:first-child):hover {
+  background-color: var(--c-offwhite);
 }
 </style>
