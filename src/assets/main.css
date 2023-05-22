@@ -7,6 +7,12 @@
   font-weight: normal;
 }
 
+a,
+a:visited {
+  color: var(--c-link);
+  text-decoration: none;
+}
+
 /* Helpers */
 .center-align-cell {
   text-align: center;
@@ -14,4 +20,38 @@
 
 .empty-table {
   padding: 1em;
+}
+
+/* Table */
+/* I wanted to make this a shared component, however table's aren't overly simple */
+table {
+  border-collapse: collapse;
+}
+
+table > tr > th {
+  text-align: left;
+  font-weight: 600;
+}
+
+table th,
+table td {
+  padding: var(--spacing-md);
+  border-left: 1px solid var(--c-border-color);
+}
+
+table td:first-child,
+table th:first-child {
+  border-left: none;
+}
+
+table th:first-child {
+  padding-left: 0;
+}
+
+table > tr:first-child {
+  border-bottom: 1px solid var(--c-border-color);
+}
+
+table > tr:not(:first-child):nth-child(odd) {
+  background-color: var(--c-offwhite);
 }
