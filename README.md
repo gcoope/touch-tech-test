@@ -2,6 +2,6 @@
 
 Tech test for TOUCH
 
-For test details see [technical_test_web.md]('./docs/technical_test_web.md')
+For test details see `/docs/technical_test_web.md`
 
-For planning and thought process see [planning.md]('./docs/planning.md')
+For planning and thought process see `/docs/planning.md`
