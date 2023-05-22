@@ -1,42 +1,52 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import { getAsset } from "@/api/api";
-import { getClientAssetValue } from "@/utils/assetUtils";
+import { getClientAsset, getClientAssetValue } from "@/utils/assetUtils";
 import { toGBP } from "@/utils/formatUtils";
-import type { AssetDetails } from "@/types";
+import { useClientsStore } from "@/stores/clients";
+
 const route = useRoute();
 const assetId = route.params.id as string;
-const asset = ref({} as AssetDetails);
-await getAsset(assetId).then((res) => {
-  if (res) asset.value = res;
-  else console.error(`Failed to get asset with ID: ${assetId}`);
+
+const clientStore = useClientsStore();
+const asset = computed(() => clientStore.currentAsset);
+onMounted(() => {
+  clientStore.fetchAsset(assetId);
 });
 </script>
 
 <template>
-  <div class="asset-view">
-    <h2>{{ asset.name }}</h2>
-    <h3 class="subtitle">{{ asset.ISIN }}</h3>
-    <label for="asset-clients-table"> Client Holdings </label>
+  <div v-if="asset" class="asset-view">
+    <section class="asset-overview">
+      <h2>{{ asset.name }}</h2>
+      <h3 class="subtitle">{{ asset.ISIN }}</h3>
+    </section>
+    <label for="asset-clients-table"><h2>Client Holdings</h2></label>
     <table id="asset-client-table">
       <tr>
         <th>Client Name</th>
         <th>Asset Investment</th>
+        <th>Portfolio percentage</th>
       </tr>
       <tr v-for="client in asset.clients">
         <td>
-          <a :href="`/client/${client.id}`">{{ client.name }}</a>
+          <router-link :to="`/client/${client.id}`">{{
+            client.name
+          }}</router-link>
         </td>
         <td>
           {{ toGBP(getClientAssetValue(client, asset.ISIN)) }}
         </td>
+        <td>{{ `${getClientAsset(client, asset.ISIN)?.percentage}%` }}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <style scoped>
+.asset-overview {
+  margin-bottom: var(--spacing-lg);
+}
 .subtitle {
   color: var(--c-text-light);
 }

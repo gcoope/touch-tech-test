@@ -1,10 +1,10 @@
 :root {
   --c-white: #ffffff;
   --c-darkgrey: #333333;
-  --c-grey: #999999;
-  --c-offwhite: #eeeeee;
+  --c-grey: #888888;
+  --c-offwhite: #f5f5f5;
   --c-brand-primary: #2a9d8f;
-  --c-brand-secondary: #e9c46a;
+  --c-brand-secondary: #22577a;
 
   --c-background: var(--c-white);
   --c-text: var(--c-darkgrey);
@@ -12,12 +12,14 @@
   --c-link: var(--c-brand-primary);
   --c-border-color: var(--c-grey);
 
-  --spacing-sm: 4px;
-  --spacing-md: 8px;
-  --spacing-lg: 12px;
-  --spacing-xl: 16px;
+  --spacing-unit: 4px;
+  --spacing-sm: var(--spacing-unit);
+  --spacing-md: calc(var(--spacing-unit) * 2);
+  --spacing-lg: calc(var(--spacing-unit) * 3);
+  --spacing-xl: calc(var(--spacing-unit) * 4);
+  --spacing-xxl: calc(var(--spacing-unit) * 5);
 
-  --border-radius: 10px;
+  --border-radius: 5px;
 }
 /* TODO Dark mode theming
 @media (prefers-color-scheme: dark) {

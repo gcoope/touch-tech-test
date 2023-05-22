@@ -9,6 +9,12 @@ Steps taken in rough order:
 5. Decide to use Single File Components (SFC) due to being most common
 6. Implemented routing between views
 7. Added tables for data in 3 views, using route param to load data
+8. A little bit of styling and layout
+9. Explored adding Pinia bookmark (I liked pinia's simplicity)
+10. Some overall styling
+11. Checked Lighthouse a11y tests
+12. Discovered compnents can't share reserved element name (e.g. Button)
+13. Looked into moving data fetching from component -> api calls, to pinia -> api calls
 
 Things to try and cover:
 
@@ -18,7 +24,9 @@ Things to try and cover:
 - Routing
 - Extendable data retrival
 
-## Data typing
+---
+
+## Data typing draft
 
 ```
 Client {

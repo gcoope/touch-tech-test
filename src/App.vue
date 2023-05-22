@@ -5,9 +5,9 @@
     <router-link to="/"><h1>Demo Advisor Portal</h1></router-link>
   </header>
   <main>
-    <Suspense>
-      <router-view />
-    </Suspense>
+    <!-- <Suspense> -->
+    <router-view />
+    <!-- </Suspense> -->
   </main>
 </template>
 
@@ -26,10 +26,6 @@ h1 {
 </style>
 
 <style>
-h2 {
-  margin-bottom: var(--spacing-md);
-}
-
 a,
 a:visited {
   color: var(--c-link);
@@ -38,7 +34,6 @@ a:visited {
 
 table {
   border-collapse: collapse;
-  border-radius: var(--border-radius);
 }
 
 table > tr > th {
@@ -55,15 +50,17 @@ table td {
 table td:first-child,
 table th:first-child {
   border-left: none;
+}
+
+table th:first-child {
   padding-left: 0;
 }
 
 table > tr:first-child {
   border-bottom: 1px solid var(--c-border-color);
-  margin-bottom: var(--spacing-md);
 }
 
-table > tr:not(:first-child):hover {
+table > tr:not(:first-child):nth-child(odd) {
   background-color: var(--c-offwhite);
 }
 </style>

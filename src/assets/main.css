@@ -6,3 +6,12 @@
   padding: 2rem;
   font-weight: normal;
 }
+
+/* Helpers */
+.center-align-cell {
+  text-align: center;
+}
+
+.empty-table {
+  padding: 1em;
+}
